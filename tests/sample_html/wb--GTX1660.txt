@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru" translate="no" class="adaptive" xmlns:og="http://ogp.me/ns#" xmlns:fb="http://www.facebook.com/2008/fbml" xml:lang="ru" prefix="zoom-id: http://ogp.me/ns/zoom-id# preload-selectors-small: http://ogp.me/ns/preload-selectors-small#">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=7; IE=Edge">
+</head>
+<body class="ru">
+    <div id="app">
+            <div itemscope itemtype="http://schema.org/Product">
+                <meta itemprop="name" content="Видеокарта Gigabyte GV N1660OC 6GD, Gigabyte">
+                <meta itemprop="image" content="https://images.wbstatic.net/big/new/8010000/8018513-1.jpg" />
+                <meta itemprop="description" content="Видеокарта GIGABYTE GeForce GTX 1660 OC [GV-N1660OC-6GD] популярная модель от известнейшего производителя." />
+                <meta itemprop="brand" content="Gigabyte">
+                    <div itemprop=aggregateRating itemscope itemtype=http://schema.org/AggregateRating>
+                        <meta itemprop="ratingValue" content="5">
+                        <meta itemprop="reviewCount" content="3">
+                    </div>
+                <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                    <meta itemprop="url" content="/catalog/8018513/detail.aspx" />
+                    <meta itemprop="price" content="51690.00">
+                    <meta itemprop="priceCurrency" content="RUB">
+                    <link itemprop="availability" href='http://schema.org/InStock' />
+                </div>
+            </div>
+</body>
+</html>

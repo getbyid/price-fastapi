@@ -40,9 +40,37 @@ http://localhost:8080/offer
 
 Получить все цены:
 
-http://localhost:8080/history
+```sh
+$ curl http://localhost:8080/history
+```
+
+Запустить обновление цен:
+
+```sh
+$ curl http://localhost:8080/update
+```
+
+## Парсеры
+
+Применяются: HTTPX, lxml, cssselect
+
+```sh
+$ pip install httpx lxml cssselect
+```
+
+Не применяются:
+
+* fake-useragent - требует setuptools
+* beautifulsoup4 - много лишнего
+
+Для парсеров есть тесты:
+
+```sh
+$ python -m pytest tests
+```
 
 ## Полезные статьи
 
 https://testdriven.io/blog/fastapi-sqlmodel/
 
+https://docs.sqlalchemy.org/en/14/index.html
