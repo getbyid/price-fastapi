@@ -10,9 +10,9 @@ from app.updater import Updater
 app = FastAPI()
 
 
-@app.on_event("startup")
-async def on_startup():
-    await init_db()
+# @app.on_event("startup")
+# async def on_startup():
+#     await init_db()
 
 
 @app.get("/products", response_model=List[Product])

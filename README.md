@@ -1,10 +1,19 @@
-FastAPI + SQLModel + Alembic
-============================
+История цен на товары в онлайн-магазинах
+========================================
 
-Применяются: FastAPI, async SQLAlchemy, SQLModel, SQLite, Alembic
++ Добавьте товары и ссылки на их страницы в поддерживаемых магазинах
++ По расписанию с указанных страниц будут забираться цены на товары и сохраняться в базу
++ Получите историю изменения цен по каждому товару
+
+> Это учебный проект, некоторые решения избыточны и не оптимальны!
+
+Применяются: [FastAPI](https://fastapi.tiangolo.com/), [SQLAlchemy](https://www.sqlalchemy.org/), [SQLModel](https://sqlmodel.tiangolo.com/), [SQLite](https://www.sqlite.org/), [Alembic](https://alembic.sqlalchemy.org/en/latest/)
+
+## Установка
 
 ```sh
-$ pip install fastapi uvicorn sqlmodel aiosqlite alembic
+$ pip install -r requirements.txt
+$ alembic upgrade head
 ```
 
 ## Запуск
@@ -52,11 +61,7 @@ $ curl http://localhost:8080/update
 
 ## Парсеры
 
-Применяются: HTTPX, lxml, cssselect
-
-```sh
-$ pip install httpx lxml cssselect
-```
+Применяются: [HTTPX](https://www.python-httpx.org/async/), [lxml](https://pypi.org/project/lxml/), [cssselect](https://pypi.org/project/cssselect/)
 
 Не применяются:
 
@@ -69,8 +74,21 @@ $ pip install httpx lxml cssselect
 $ python -m pytest tests
 ```
 
+## Миграции
+
+```sh
+$ alembic revision --autogenerate -m "init"
+$ alembic history
+<base> -> acc8b8a37ccd (head), init
+```
+
+## TODO
+
++ Больше магазинов (пока только WB)
++ Страница с графиком и формой добавления товаров
+
 ## Полезные статьи
 
 https://testdriven.io/blog/fastapi-sqlmodel/
 
-https://docs.sqlalchemy.org/en/14/index.html
+https://docs.sqlalchemy.org/en/14/orm/extensions/asyncio.html
