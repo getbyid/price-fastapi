@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>История цен на товары</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha256-T/zFmO5s/0aSwc6ics2KLxlfbewyRz6UNw1s3Ppf5gE=" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha256-7dA7lq5P94hkBsWdff7qobYkp9ope/L5LQy2t/ljPLo=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"
+    integrity="sha256-bC3LCZCwKeehY6T4fFi9VfOU0gztUa+S4cnkIhVPZ5E=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@2.0.0/dist/chartjs-adapter-date-fns.bundle.min.js"
+    integrity="sha256-xlxh4PaMDyZ72hWQ7f/37oYI0E2PrBbtzi1yhvnG+/E=" crossorigin="anonymous"></script>
+  <script src="price.js"></script>
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="d-flex justify-content-center">
+      <form id="form">
+        <div class="btn-toolbar m-2" role="toolbar" aria-label="Настройка графика и действия с товаром">
+
+          <div class="btn-group btn-group-toggle m-1" data-toggle="buttons" aria-label="За какой период график">
+            <label class="btn btn-outline-secondary active">
+              <input type="radio" name="period" autocomplete="off" value="all" checked> Всё время
+            </label>
+            <label class="btn btn-outline-secondary">
+              <input type="radio" name="period" autocomplete="off" value="year"> Год
+            </label>
+            <label class="btn btn-outline-secondary">
+              <input type="radio" name="period" autocomplete="off" value="month"> Месяц
+            </label>
+          </div>
+
+          <div class="input-group m-1">
+            <select class="form-control" id="product" name="product" title="Выберите товар" aria-label="Выбор товара">
+              <option value="1">Довольно длинное название товара</option>
+            </select>
+          </div>
+
+          <div class="btn-group m-1" role="group" aria-label="Действия с товаром">
+            <button type="button" class="btn btn-danger">Убрать</button>
+            <button type="button" class="btn btn-warning">Изменить</button>
+            <button type="button" class="btn btn-success">Добавить</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <div class="card">
+      <canvas id="chart"></canvas>
+      <div class="card-body">
+        <h5 class="card-title">История цен на товары в онлайн-магазинах</h5>
+        <p class="card-text">Каждый магазин рисуется своим цветом, его видно в легенде над графиком. Линию магазина
+          можно скрыть щелчком по его легенде.</p>
+        <!-- <p class="card-text">Удобнее видеть не саму цену, а её изменение. И не в рублях, а в процентах от цены на
+          какой-либо день. Сейчас выводится отклонение от последней (действующей) цены, позже можно будет настроить.</p> -->
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>

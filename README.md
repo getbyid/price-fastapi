@@ -22,8 +22,11 @@ $ alembic upgrade head
 $ uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 8080
 ```
 
-Swagger UI:
-http://127.0.0.1:8080/docs
+Веб-интерфейс для просмотра графиков изменения цен по товарам:
+http://localhost:8080/
+
+Документация по API (Swagger UI):
+http://localhost:8080/docs
 
 ## Применение
 
@@ -47,10 +50,10 @@ $ curl -H "Content-Type: application/json" \
 http://localhost:8080/offer
 ```
 
-Получить все цены:
+Получить цены по одному товару:
 
 ```sh
-$ curl http://localhost:8080/history
+$ curl http://localhost:8080/history?product=1
 ```
 
 Запустить обновление цен:
